@@ -21,8 +21,6 @@ El proyecto requiere las siguientes bibliotecas de Python, las cuales están ins
 
 En el archivo de Google Colab, las bibliotecas se instalan automáticamente cuando se ejecutan las celdas correspondientes. No es necesario instalar estas bibliotecas manualmente.
 
-## **Dependencias**
-
 Las siguientes bibliotecas se utilizan para llevar a cabo el análisis de los datos:
 
 ```python
