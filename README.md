@@ -2,18 +2,72 @@
 
 ## **Descripción del Proyecto**
 
-Este proyecto tiene como objetivo analizar datos de ventas de cuatro tiendas de la cadena **Alura Store** para identificar cuál de ellas sería más recomendable vender, basándose en criterios financieros, geográficos, de satisfacción del cliente y desempeño de productos.
+Este proyecto está enfocado en analizar el rendimiento de las tiendas de Alura Store para ayudar al Sr. Juan a tomar una decisión estratégica sobre qué tienda vender para iniciar un nuevo emprendimiento. Se han analizado varios indicadores clave, como ingresos, ventas por categoría, satisfacción del cliente, costos de envío y rendimiento geográfico. El análisis se realizó utilizando Google Colab y se incluye un conjunto de códigos y visualizaciones para facilitar la comprensión y toma de decisiones.
 
-Se utilizaron herramientas de análisis de datos, visualización gráfica y geolocalización para obtener una visión integral del rendimiento de cada tienda.
 
-## **Herramientas Utilizadas**
+## **Instalación y Requisitos**
 
-- Python
-- Pandas
-- Matplotlib
-- Seaborn
-- Folium
-- Numpy
+Para ejecutar este proyecto, se debe utilizar Google Colab, lo cual facilita la ejecución en la nube sin necesidad de configuración local. Simplemente, abre el archivo `.ipynb` en Google Colab para comenzar.
+
+### **Dependencias**
+
+El proyecto requiere las siguientes bibliotecas de Python, las cuales están instaladas en el entorno de Google Colab:
+
+- **Pandas**: Para la manipulación y análisis de datos en formato CSV.
+- **Matplotlib**: Para la creación de gráficos y visualizaciones.
+- **Folium**: Para la creación de mapas interactivos y análisis geográfico.
+- **NumPy**: Para manejar arrays y cálculos matemáticos.
+- **Seaborn**: Para visualizaciones adicionales y análisis estadístico.
+
+En el archivo de Google Colab, las bibliotecas se instalan automáticamente cuando se ejecutan las celdas correspondientes. No es necesario instalar estas bibliotecas manualmente.
+
+## **Dependencias**
+
+Las siguientes bibliotecas se utilizan para llevar a cabo el análisis de los datos:
+
+```python
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import folium
+from folium.plugins import HeatMap, MarkerCluster
+import seaborn as sns
+```
+
+## **3. Cómo ejecutar el proyecto**
+
+Para ejecutar el proyecto, sigue estos pasos:
+
+1. Abre el archivo del proyecto en Google Colab.
+2. Asegúrate de que las celdas de código estén correctamente ejecutadas.
+3. Los datos de las tiendas se descargan automáticamente desde los enlaces de CSV proporcionados dentro del proyecto.
+4. Los resultados se muestran en formato de tabla o gráfico, y se incluyen mapas interactivos que te permiten explorar las áreas de ventas.
+
+Este proyecto está preparado para ser ejecutado tal como está en Google Colab, por lo que no es necesario hacer ninguna configuración adicional. Solo necesitas abrir el archivo `.ipynb` y seguir las instrucciones.
+
+## **4. Descripción de los archivos CSV**
+
+Los archivos CSV contienen los datos de ventas de cada tienda de la cadena Alura Store. Los archivos se encuentran disponibles en los siguientes enlaces:
+
+- **Tienda 1**: [CSV Tienda 1](https://raw.githubusercontent.com/alura-es-cursos/challenge1-data-science-latam/refs/heads/main/base-de-datos-challenge1-latam/tienda_1%20.csv)
+- **Tienda 2**: [CSV Tienda 2](https://raw.githubusercontent.com/alura-es-cursos/challenge1-data-science-latam/refs/heads/main/base-de-datos-challenge1-latam/tienda_2.csv)
+- **Tienda 3**: [CSV Tienda 3](https://raw.githubusercontent.com/alura-es-cursos/challenge1-data-science-latam/refs/heads/main/base-de-datos-challenge1-latam/tienda_3.csv)
+- **Tienda 4**: [CSV Tienda 4](https://raw.githubusercontent.com/alura-es-cursos/challenge1-data-science-latam/refs/heads/main/base-de-datos-challenge1-latam/tienda_4.csv)
+
+Los datos incluyen información sobre los productos vendidos, ingresos, costos de envío, calificaciones de los clientes, fechas de compra, y coordenadas geográficas (latitud y longitud) para análisis geográficos.
+
+
+## **Análisis y Visualizaciones**
+
+En el proyecto se realiza un análisis exhaustivo de los datos con los siguientes objetivos:
+
+1. **Cálculo de los ingresos totales por tienda**: Se compara el rendimiento económico de cada tienda.
+2. **Análisis de ventas por categoría y producto**: Se determina cuál es el producto más vendido y la categoría que domina las ventas.
+3. **Valoración del cliente**: Se calculan las calificaciones promedio de los productos y se determina cuál tienda tiene las mejores valoraciones.
+4. **Costos de envío**: Se analizan los costos de envío de cada tienda.
+5. **Análisis geográfico**: Se realiza un análisis de la distribución geográfica de las ventas, utilizando mapas de calor y marcadores interactivos.
+6. **Análisis y Recomendaciones**: Basado en los resultados, se presenta una recomendación sobre qué tienda debería venderse para maximizar el rendimiento y crecimiento.
+
 
 ## **Pasos Realizados**
 
@@ -61,38 +115,15 @@ Se utilizaron herramientas de análisis de datos, visualización gráfica y geol
 - Tienda 4, aunque tiene el envío más económico, presenta los peores indicadores de ingresos, dominancia geográfica y valoración.
 
 **Recomendación final:**  
-> Vender la Tienda 4 y concentrar esfuerzos en fortalecer la Tienda 3, que muestra el mejor desempeño general.
+> Basado en los datos analizados, se recomienda la venta de la Tienda 4, ya que tiene un rendimiento inferior en comparación con las demás tiendas, tanto en términos de ingresos, valoraciones de clientes y dominancia geográfica. La Tienda 3, por otro lado, se muestra como la más sólida para continuar con el crecimiento de la cadena Alura Store.
 
----
+## **7. Posibles problemas y soluciones**
 
-# **Estructura de Carpetas**
+### **Superposición de puntos en los gráficos geográficos**
+En áreas de alta densidad de datos, puede haber una superposición de puntos. Se recomienda utilizar **gráficos separados** por tienda o agregar capas de **HeatMap** para visualizar mejor las concentraciones de ventas.
 
-```bash
-Proyecto_Alura_Store/
-│
-├── datos/
-│   ├── tienda_1.csv
-│   ├── tienda_2.csv
-│   ├── tienda_3.csv
-│   └── tienda_4.csv
-│
-├── notebooks/
-│   ├── analisis_ventas.ipynb
-│   ├── analisis_categorias.ipynb
-│   ├── analisis_geografico.ipynb
-│
-├── mapas/
-│   ├── mapa_heatmap
-│   ├── mapa_distribucion
-│   └── mapa_zonas_dominantes
-│
-├── graficos/
-│   ├── ingresos_tiendas.png
-│   ├── categorias_mas_vendidas.png
-│   └── calificaciones_promedio.png
-│
-└── README.md
-```
+### **Archivos CSV no se descargan correctamente**
+Si los archivos CSV no se descargan correctamente, asegúrate de que el enlace sea accesible. En caso de problemas con el acceso, los archivos pueden descargarse manualmente desde los enlaces proporcionados y cargarse directamente en el proyecto.
 
 ---
 
@@ -100,3 +131,8 @@ Proyecto_Alura_Store/
 
 - Todos los análisis y visualizaciones se generaron con datos simulados proporcionados por Alura para fines de entrenamiento y desarrollo de habilidades de Ciencia de Datos.
 - Este proyecto sigue buenas prácticas de visualización y storytelling analítico.
+
+# **Autor**
+Evelyn Pareja Ríos 
+
+Proyecto realizado como parte del Challenge de Data Science - Alura Latam.
