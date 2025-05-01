@@ -9,7 +9,7 @@ Este proyecto está enfocado en analizar el rendimiento de las tiendas de Alura 
 
 Para ejecutar este proyecto, se debe utilizar Google Colab, lo cual facilita la ejecución en la nube sin necesidad de configuración local. Simplemente, abre el archivo `.ipynb` en Google Colab para comenzar.
 
-También se recomienda que para la visualización de algunos mapas como el Headmap y el mapa interactivo se ejecute por medio de colab, ya que no está disponible por el momento una visualización previa de estos.
+Se recomienda que para la visualización de algunos mapas, como el Headmap y el mapa interactivo, se ejecuten por medio de Google colab, ya que por el momento no está disponible una visualización previa de estos.
 
 ### **Dependencias**
 
